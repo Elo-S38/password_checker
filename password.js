@@ -2,6 +2,8 @@
 const password = "Test123";
 const password2 = "Test1234";
 const password3 = "Test *421/565MMDI";
+const password4 = "test12345*";
+
 const LongeurPassword = /^.{8,}$/; //regex pour qu'indiquer le minimum de caracteres à avoir (tout confondu)
 
 if (LongeurPassword.test(password)) {
@@ -48,3 +50,27 @@ if (AlphaStringCaract.test(password3)) {
 /* Etape 3 */
 const casse = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[^a-zA-Z0-9]).{8,}$/;
 //au moins une minuscule, une majuscule, un chiffre et tous sauf une minuscule, majuscule et un chiffre (donc un caractere special)et qu'il doit etre composé au moins de 8 caracteres
+
+if (casse.test(password2)) {
+  console.log("mdp valide");
+} else {
+  console.log(
+    "mdp invalide, manque une lettre, un chiffre ou un caractere special ou trop court"
+  );
+}
+
+if (casse.test(password3)) {
+  console.log("mdp valide");
+} else {
+  console.log(
+    "mdp invalide, manque une lettre, un chiffre ou un caractere special ou trop courd"
+  );
+}
+
+if (casse.test(password4)) {
+  console.log("mdp valide");
+} else {
+  console.log(
+    "mdp invalide, manque une lettre, un chiffre ou un caractere special ou trop courd"
+  );
+}
