@@ -44,3 +44,7 @@ if (AlphaStringCaract.test(password3)) {
     "non valide, manque une lettre, un chiffre ou un caractere special"
   );
 }
+
+/* Etape 3 */
+const casse = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[^a-zA-Z0-9]).{8,}$/;
+//au moins une minuscule, une majuscule, un chiffre et tous sauf une minuscule, majuscule et un chiffre (donc un caractere special)et qu'il doit etre composé au moins de 8 caracteres
